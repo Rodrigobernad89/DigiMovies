@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %> 
+
+<body>
+
+<%- include('./partials/header')  %> 
+  <section class = "contenedor">
+    <h1>Las Peliculas Recomendadas Son</h1>
+    <% recomendadas.forEach(recomendada => { %>
+      <a class = "link-pelicula" href = '/movies/detail/<%= recomendada.id %>'>  <%= recomendada.title %></a><br>
+    <% }) %>    
+  </section>
+    <%- include('./partials/footer')  %> 
+</body>
+    
+</html>

@@ -1,0 +1,318 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 80vh;
+}
+
+
+.contenedor{
+    display:block;
+    text-align:center;
+    background-color:white;
+    width:100%;
+    height:150vh;
+}
+
+.header-principal{
+    background-color: black;
+    width:100%;
+}
+
+.logo{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.logo img{
+    width:100%;
+}
+
+.toggle-nav{
+    font-size:40px;
+    color:white;
+    text-align:left;
+}
+
+.menu_de_navegacion .nav-list-items{
+    list-style:none;
+    width:100%;
+    margin:0;
+
+}
+
+.menu_de_navegacion .nav-list-items li{
+    text-decoration:none;
+    border:solid white
+}
+
+.menu_de_navegacion .nav-list-items li a{
+    color:#fff;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 15px;
+    font-weight:bold;
+    letter-spacing: 1px;
+}
+
+.menu_de_navegacion .nav-list-items li a:hover {
+    color: #444;
+    font-family: 'Raleway', sans-serif;
+}
+
+.formulario-busqueda{
+    display:none;
+
+}
+
+.pie_de_pagina{
+    background-color:black;
+    display:inline-block;
+    padding-top:30px;
+    width:100%;
+}
+
+.contenedorfinal .informacion p{    
+    color:white;
+    text-transform: uppercase;
+    font-weight:bold;
+    font-family: 'Raleway', sans-serif
+}
+
+.listabotonderedes{
+    list-style:none;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.listabotonderedes li a i{
+    color:#fff;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.copyright{
+    width:100%;
+    text-align: center;
+    color:white;
+}
+
+
+.bienvenidos a{
+    text-decoration: none;
+    color:black;
+}
+
+.bienvenidos a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+.bienvenidos a h1{
+    margin-top: 300px;
+    text-decoration: none;
+}
+
+.link-pelicula{
+    /* margin-bottom:20px; */
+    text-decoration: none;
+    color:black;
+}
+
+.link-pelicula:hover{
+    text-decoration: none;
+    color:red;
+    font-size: 40px;
+}
+.link-actor{
+    text-decoration:none;
+    color:black;
+}
+.detalle h1{
+    margin:30px;
+    margin-bottom: 80px;
+}
+.detalle p{
+    margin:15px;
+}
+
+.botones-edicion-delete{
+    display:flex;
+    justify-content: center;
+    margin-top:30px;
+}
+.titulo-edicion{
+    margin:20px;
+}
+.boton-edicion{
+   border-radius: 10px;
+   border-color: white;
+   border-width: 0.5px;
+   height: 50px;
+   width: 150px;
+   font-family: 'Raleway', sans-serif;
+   background-color: #a9e225;
+   color:#F2F2EA;
+   margin-top: 30px;
+   margin-bottom:40px;
+   margin-right: 20px;     
+}
+
+.botones-edicion-delete .boton-edicion a {
+    text-decoration:none;
+    color:white;
+}
+
+.campo-pelicula{
+    margin:20px;
+}
+
+.link-genero{
+    color:black;
+    text-decoration:none;
+}
+
+.link-genero:hover{
+    text-decoration: none;
+    color:red;
+    font-size: 40px;
+}
+@media (min-width:768px){
+    .contenedor{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .header-principal{
+        padding:20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        height: 70px;
+        box-sizing:border-box;
+    }
+    
+    .toggle-nav{
+        display:none;
+    }
+
+    .logo{
+        width:10%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        box-sizing: border-box;
+    }
+    
+    .menu_de_navegacion{
+        display:flex;
+        width:100%;
+        justify-content:space-around;
+        align-items:center;
+        padding:0;
+    }
+
+    .formulario-busqueda{
+        display:flex;
+    
+    }
+
+    .header-principal .menu_de_navegacion .nav-list-items{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .menu_de_navegacion .nav-list-items li{
+        border:none;
+        padding:10px;
+    }
+    
+    .menu_de_navegacion .nav-list-items1 li .formulario-busqueda{
+        margin:0;
+    }
+    
+    .formulario-busqueda .nav-search{
+        border:solid;
+    }
+    
+    .icon-search{
+        background-color:white;
+        color:lightgray;
+        margin-left:0 px;
+        border-radius:5px;
+    }
+    
+    .nav-search-input{
+        border: 1px dotted #999;
+        border-radius: 5px;
+        -webkit-appearance: none;
+    }
+
+    /* .pie_de_pagina{
+        margin:0%;
+        padding:10px;   
+    }
+    
+    .contenedorfinal{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    
+    .informacion{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:nowrap;
+        margin-top:20px;
+        padding:10px;
+    }
+    
+    .listabotonderedes{
+        display: flex;
+        align-items: space-between;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        margin-bottom:0px;  
+        padding:10px;
+    }
+    
+    .listabotonderedes li a i{
+        padding-left: 15px;
+        font-weight:bold;
+        letter-spacing: 1px;
+    }
+        
+    .listabotonderedes li a i:hover{
+        color:gray;
+    } */
+    
+}
+
+
+@media (min-width:992px) {
+    .nav-search-input{
+        padding: 0 50px;
+    }
+
+
+}
+
+@media (min-width:1200px){
+    .nav-search-input{
+        padding: 0 150px;
+    }
+
+}

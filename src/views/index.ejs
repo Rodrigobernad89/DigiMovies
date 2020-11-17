@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %> 
+
+<body>
+
+<%- include('./partials/header')  %> 
+<section class ="contenedor">
+    <h1>Las Peliculas Son</h1>
+
+      <% movies.forEach(movie => { %>
+        <a class = "link-pelicula" href = '/movies/detail/<%= movie.id %>'>  <%= movie.title %></a> <br>
+        <% }) %>
+      </section>
+
+  <%- include('./partials/footer')  %> 
+  </body>
+</html>

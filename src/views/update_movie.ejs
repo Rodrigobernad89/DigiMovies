@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %> 
+
+<body>
+
+<%- include('./partials/header')  %> 
+
+    <section class = "contenedor">
+        <h1 class ="titulo-edicion">Estas editando: <%= toEdit.title %> </h1>
+        <form action="/edit/<%= toEdit.id %>?_method=PUT" method="POST" class = 'formulario-pelicula'>
+            <label for="">Title</label><br>
+            <input type="text" name="title" value =<%= toEdit.title %>  class="campo-pelicula"><br>
+            <label for="">Rating</label><br>
+            <input type="text" name="rating" value = <%= toEdit.rating %> class="campo-pelicula"><br>
+            <label for="">Awards</label><br>
+            <input type="text" name="awards" value = <%= toEdit.awards %> class="campo-pelicula"><br>
+            <label for="">Length</label><br>
+            <input type="text" name="length" value = <%= toEdit.length %> class="campo-pelicula"><br>
+            <label for="">Genre</label><br>
+            <select name="genre_id" class="campo-pelicula"><br>
+                <% generos.forEach(genero => { %>
+                    <% if (toEdit.GenreId === genero.id) { %>                     
+                        <option value="<%= genero.id %>" selected><%= genero.name %> </option>
+                    <% } else { %>
+                        <option value="<%= genero.id %>"><%= genero.name %> </option>                
+                    <% } %> 
+                <% }) %>
+            </select><br>
+            <label for="">Actors</label><br>
+            <select name="actores" class="campo-pelicula" multiple><br>
+                <% actores.forEach(actor => { %>
+                    <% if (toEdit.actores.some(actorPelicula => actorPelicula.id == actor.id)) { %>
+                        <option value="<%= actor.id %>" selected><%= actor.first_name %><%= actor.last_name %> </option>
+                    <% } else { %>
+                        <option value="<%= actor.id %>"><%= actor.first_name %><%= actor.last_name %> </option>
+                    <% } %> 
+                
+                <% }) %> 
+            </select><br>
+            <label for="">Release Date</label>
+            <input type="date" name="release_date" class="campo-pelicula"><br>
+            <button type="submit" class = "boton-edicion">Update!</button>
+        
+        </form>
+    </section>
+
+    <%- include('./partials/footer')  %> 
+
+  </body>
+</html>

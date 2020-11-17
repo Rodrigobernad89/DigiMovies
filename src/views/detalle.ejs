@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %> 
+
+<body>
+
+<%- include('./partials/header')  %> 
+  <section class = "contenedor">
+    <section class = "detalle">
+
+      <h1>Detalle de pelicula:</h1>
+      <p>Titulo : <%= detallePelicula.title %></p><br>
+      <p>Rating : <%= detallePelicula.rating %></p><br>
+      <p>Premios : <%= detallePelicula.awards %></p><br>
+      <p>Duracion : <%= detallePelicula.length %></p><br>
+      <p><a href="/movies/generos/<%= detallePelicula.Genre.id %> " class ="link-genero">Genero : <%= detallePelicula.Genre.name %></p></a><br>
+        <ul><% detallePelicula.actores.forEach(actor => { %>
+          <li><a class = "link-pelicula" href="/movies/actores/<%= actor.id %> "> Actor : <%= actor.first_name %><%= actor.last_name %></a></li>
+                 
+        <% }) %> 
+      </ul>
+        <br>
+      <p>Fecha de estreno :<%= detallePelicula.release_date %></p><br>
+
+      <div class = "botones-edicion-delete">
+        <button class = "boton-edicion" type="submit">
+            <a href="/movies/edit/<%= detallePelicula.id %> ">
+                Editar pelicula
+            </a>
+        </button>
+        <form action="/movies/delete/<%= detallePelicula.id %>?_method=DELETE"method="POST" style="display: inline-flex">
+            <button class = "boton-edicion" type="submit">ELIMINAR</button>
+        </form>
+    </div>              
+</div>
+
+    </section>
+  </section>
+<%- include('./partials/footer')  %> 
+  </body>
+</html>

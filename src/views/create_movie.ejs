@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head')  %> 
+
+<body>
+
+<%- include('./partials/header')  %> 
+
+    <section class = "contenedor">
+        <h2 class = "titulo-edicion">Crear Pelicula</h2>
+        <form action="/movies/create" method="POST" class = 'formulario-pelicula'>
+            <div style = "width: 500px;">
+                <% if (typeof errors != "undefined") { %>
+                    <% errors.forEach(error => { %>
+                        <p><%= error.msg %> </p>
+                    <% }) %>			
+                <% } %>
+            </div>
+             <label for="">Title</label><br>
+            <input type="text" name="title" class="campo-pelicula"><br>
+            <label for="">Rating</label><br>
+            <input type="text" name="rating" class="campo-pelicula"><br>
+            <label for="">Awards</label><br>
+            <input type="text" name="awards" class="campo-pelicula"><br>
+            <label for="">Length</label><br>
+            <input type="text" name="length" class="campo-pelicula"><br>
+            <label for="">Genre</label><br>
+            <select name="genre_id" class="campo-pelicula"><br>
+                <% generos.forEach(genero => { %>
+                    <option value="<%= genero.id %>"><%= genero.name %> </option>
+                 
+                <% }) %> 
+            </select><br>
+            <label for="">Actors</label><br>
+            <select name="actores" class="campo-pelicula" multiple><br>
+                <% actores.forEach(actor => { %>
+                    <option value="<%= actor.id %>"><%= actor.first_name %><%= actor.last_name %> </option>
+                 
+                <% }) %> 
+            </select><br>
+            <label for="">Release Date</label>
+            <input type="date" name="release_date" class="campo-pelicula"><br>
+            <button type="submit" class = "boton-edicion">Create!</button>
+        
+        </form>
+    </section>
+
+    <%- include('./partials/footer')  %> 
+  </body>
+</html>
