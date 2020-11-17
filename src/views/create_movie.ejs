@@ -9,14 +9,7 @@
 
     <section class = "contenedor">
         <h2 class = "titulo-edicion">Crear Pelicula</h2>
-        <form action="/movies/create" method="POST" class = 'formulario-pelicula'>
-            <div style = "width: 500px;">
-                <% if (typeof errors != "undefined") { %>
-                    <% errors.forEach(error => { %>
-                        <p><%= error.msg %> </p>
-                    <% }) %>			
-                <% } %>
-            </div>
+        <form action="/movies/create" method="POST" class = 'formulario-pelicula'>      
              <label for="">Title</label><br>
             <input type="text" name="title" class="campo-pelicula"><br>
             <label for="">Rating</label><br>

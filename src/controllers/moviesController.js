@@ -1,5 +1,6 @@
 const db= require('../database/models');
 const{Movie, Genre, Actor} = require('../database/models')
+const { validationResult } = require('express-validator');
 const {Op} = require('sequelize');
 
 
@@ -73,15 +74,16 @@ module.exports = {
     },
     store: async (req,res) =>{
         // const errors = validationResult(req);
-        // try{
-        // errors.isEmpty()
-        console.log(req.body);
+        
+
+		// if(errors.isEmpty()){
+        // console.log(req.body);
         const newMovie = await Movie.create(req.body)
         await newMovie.addActores(req.body.actores)
         res.redirect('/movies')
-        // }catch (error){
-        //     res.render("create_movie", { errors: errors.errors});
-        // }
+        // }else{
+            // res.render("create_movie", { errors: errors.errors});
+    // }
     },
     update: async (req,res) =>{
         const movieId = req.params.id;
@@ -119,38 +121,5 @@ module.exports = {
         const detalleActor = await Actor.findByPk(actorId, {include:['movies']});
         // res.json(detalleActor);
         res.render('actores', {detalleActor});
-    },
-
-    // promesas sin async await
-    // all: (req,res) =>{
-    //     const movies = Movie.findAll()
-        // promesas sin async await
-        // .then((respuesta)=>respuesta.json())
-        // .then((data) => res.json(data)).catch()
-    // otros metodos .findByPk()
-    //               .findOne({
-    //  attributes:['title', 'length'],
-    //  where: {title: 'Avatar'}
-    // })
-
-    
-    //     all: async(req,res) =>{
-    //     try {
-
-    //         const moviesJson = await Movie.findOne({
-    //              where: {
-    //                  [Op.or]:[{username:req.body.user},{email:req.body.user}]
-                    
-    //                 }
-    //             })
-    //         // const moviesJs = await moviesJson.json()
-    //         res.json(moviesJson)
-            
-    //     } catch (error) {
-
-    //         console.log(error);
-    //     }
-    // }
-
-        
+    },  
 }
